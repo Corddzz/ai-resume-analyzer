@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router';
-import Details from '~/components/Details';
 import Summary from '~/components/Summary';
 import { usePuterStore } from '~/lib/puter';
+import ATS from '~/components/ATS';
+import Details from '~/components/Details';
 
 export const meta = () => [
   { title: 'Resumind | Review' },
@@ -12,10 +13,9 @@ export const meta = () => [
 const Resume = () => {
   const { auth, isLoading, fs, kv } = usePuterStore();
   const { id } = useParams();
-
   const [imageUrl, setimageUrl] = useState('');
   const [resumeUrl, setresumeUrl] = useState('');
-  const [feedback, setfeedback] = useState('');
+  const [feedback, setFeedback] = useState<Feedback | null>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -43,7 +43,7 @@ const Resume = () => {
       const imageUrl = URL.createObjectURL(imageBlob);
       setimageUrl(imageUrl);
 
-      setfeedback(data.feedback);
+      setFeedback(data.feedback);
       console.log({ resumeUrl, imageUrl, feedback: data.feedback });
     };
 
