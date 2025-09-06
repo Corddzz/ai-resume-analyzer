@@ -225,6 +225,61 @@ export const AIResponseFormat = `
       };
     }`;
 
+// export const AIResponseFormat = `
+// {
+//   "overallScore": number, // max 100
+//   "ATS": {
+//     "score": number, // rate based on ATS suitability
+//     "tips": [
+//       {
+//         "type": "good" | "improve",
+//         "tip": string // give 3-4 tips
+//       }
+//     ]
+//   },
+//   "toneAndStyle": {
+//     "score": number, // max 100
+//     "tips": [
+//       {
+//         "type": "good" | "improve",
+//         "tip": string, // short "title"
+//         "explanation": string // explain in detail here
+//       }
+//     ]
+//   },
+//   "content": {
+//     "score": number, // max 100
+//     "tips": [
+//       {
+//         "type": "good" | "improve",
+//         "tip": string, // short "title"
+//         "explanation": string
+//       }
+//     ]
+//   },
+//   "structure": {
+//     "score": number, // max 100
+//     "tips": [
+//       {
+//         "type": "good" | "improve",
+//         "tip": string,
+//         "explanation": string
+//       }
+//     ]
+//   },
+//   "skills": {
+//     "score": number, // max 100
+//     "tips": [
+//       {
+//         "type": "good" | "improve",
+//         "tip": string,
+//         "explanation": string
+//       }
+//     ]
+//   }
+// }
+// `;
+
 export const prepareInstructions = ({
   jobTitle,
   jobDescription,
